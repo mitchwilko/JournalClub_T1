@@ -13,16 +13,16 @@
 % footer has a uds logo and shows page number only
 \setbeamertemplate{footline}
 {%
-	\leavevmode%
-	\hbox{%
-		\begin{beamercolorbox}[wd=\paperwidth,ht=0.5cm,dp=1ex,left]{pagenumber}%
-			\hspace*{1ex} \insertframenumber{} \hspace*{1ex}
-		\end{beamercolorbox}
-		\if \beamer@UNSW@sidelogo\@empty
-		\else
-			\llap{\includegraphics[height=0.4cm]{\beamer@UNSW@sidelogo} \hspace{2mm}}
-		\fi
-	}%
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=0.5cm,dp=1ex]{pagenumber}%
+            \hspace*{1ex}\insertframenumber\hfill
+            \if\beamer@UNSW@sidelogo\@empty
+            \else
+                \includegraphics[height=0.4cm]{\beamer@UNSW@sidelogo}\hspace*{2mm}
+            \fi
+        \end{beamercolorbox}%
+    }%
 }
 
 % we insert the watermark background from the sidebar
@@ -39,24 +39,32 @@
 % customisation for the title page
 \setbeamertemplate{title page}
 {
-	
-	
-		\begin{columns}
-			\column{0.2\paperwidth}
-				\begin{beamercolorbox}[sep=0.2cm, center]{titlebar}%
-					\includegraphics[height=2cm]{\beamer@UNSW@logo}
-				\end{beamercolorbox}
-			\column{3mm}
-			\column{0.8\paperwidth}
-				\usebeamerfont{title}{\usebeamercolor[fg]{title}\inserttitle}\par
-				\usebeamerfont{subtitle}{\usebeamercolor[fg]{subtitle}\insertsubtitle}\par
-		\end{columns}
-	
-	\bigskip
-	\usebeamerfont{author}\insertauthor\par
-	\usebeamerfont{institute}\insertinstitute\par
-	\usebeamerfont{date}\insertdate
-}
+    % Logo in top left
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=north west, inner sep=10pt] at (current page.north west) {
+            \includegraphics[height=2cm]{\beamer@UNSW@logo}
+        };
+    \end{tikzpicture}
+	\vspace{2cm}
+    % Centered title and subtitle
+    \vfill
+    \begin{beamercolorbox}[center]{title}
+		\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
+        \vspace{0.5em}
+        \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+    \end{beamercolorbox}
+    \vfill
 
+    % Author bottom left
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south west, inner sep=10pt] at (current page.south west) {
+            \begin{minipage}{0.6\paperwidth}
+                \usebeamerfont{author}\insertauthor\par
+                \usebeamerfont{institute}\insertinstitute\par
+                \usebeamerfont{date}\insertdate
+            \end{minipage}
+        };
+    \end{tikzpicture}
+}
 \mode<all>
 \endinput

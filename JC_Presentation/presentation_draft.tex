@@ -1,8 +1,11 @@
 \documentclass[aspectratio=169]{beamer}
-\usepackage[authoryear,round]{natbib}
+\usepackage{natbib}
+\setcitestyle{authoryear, aysep{" "}}
 \usepackage{graphicx}
 \usepackage{braket}
 \usepackage{subfig}
+\usepackage{array}
+\usepackage{longtable}
 \captionsetup[subfloat]{labelfont={color=black}}
 
 \usetheme[
@@ -28,21 +31,33 @@
     \section{Background}
 
     \begin{frame}{Problem}
-        Physics\citep{anderson1958}
+        Physics\cite{anderson1958}
     \end{frame}
 
     \begin{frame}[allowframebreaks]{Key Terms}
-        \textbf{F-actin}
-
-        \textbf{Cytoskeleton}
-
-        \textbf{Myosin}
-
-        \textbf{Actomyosin}
-
-        \textbf{mDia1 \& arp2/3}
-
-        \textbf{Stress localization}
+        \begin{longtable}{m{4cm}|m{9cm}}
+            \hline
+            \textbf{Cytoskeleton} & Network of filaments and tubes that provide structure to the cell membrane. \vspace{0.2cm}\\
+            \hline  
+            \textbf{F-actin} & A long, helical protein polymer existing withing the cytoskeleton. One of the main components of the cytoskeleton, providing structure \vspace{0.2cm}\\
+            \hline
+            \textbf{Myosin} & Another protein found in the cytoskeleton able to convert chemical energy (from ATP) into mechanical energy through interactions with the F-actin \vspace{0.2cm}\\
+            \hline
+            \textbf{Actomyosin} & This is the protein complex (group of proteins) responsible for contractile motion within the muscle fibres (muscle cell) \vspace{0.2cm}\\
+            \hline
+            \textbf{mDia1 \& arp2/3} & Critical regulators of actin cytoskeleton dynamics. mDia1 generates a linear, non-branched actin filament. Arp2/3 builds brached actin networks.  \vspace{0.2cm}\\
+            \hline
+            \textbf{Energy dissaptive events} & This is an event in which energy is converted from a highly ordered form to a disordered form. \vspace{0.2cm}\\
+            \hline
+            \textbf{Scale-free energy dissaption} & A description of a system where the energy dissapation events have no characteristic 'size'. \vspace{0.2cm}\\
+            \hline
+            \textbf{Criticality} & A system which can exhibit a phase transition (ordered to disordered) through the tuning of a parameter. \vspace{0.2cm}\\
+            \hline
+            \textbf{Self Ordered Criticality} & A system which exhibits this critical point through no tuning. It will always exist at the edge of ordered and disordered \vspace{0.2cm}\\
+            \hline
+            % \textbf{Stress localization} & \vspace{0.2cm}\\
+            % \hline
+        \end{longtable}
     \end{frame}
 
     \begin{frame}{Phase transitions}
@@ -173,13 +188,47 @@
     \section{Context}
 
     \begin{frame}{Who are the authors?}
-        More Physics. who are the characters i.e. who is supervisor and phd student and what has supervisor done in the past
+        \begin{figure}
+            \subfloat[Dr. Zachary Gao Sun]{\includegraphics[width=0.25\textwidth]{images/ZSun_Photo.png}}
+            \hspace{0.1\linewidth}
+            \subfloat[A/Prof. Michael Murrell]{\includegraphics[width=0.25\textwidth]{images/MMurrel_Photo.png}}
+            \hspace{0.1\linewidth}
+            \subfloat[Laboratory group of M. Murrell]{\includegraphics[width=0.5\textwidth]{images/LabLivingMatter.png}}
+        \end{figure}
     \end{frame}
 
-    \begin{frame}{Previous work in literature}
-        More Physics, keep it short
+    \begin{frame}{Previous work - Laboratory of Living Matter}
+        \begin{description}
+            \item[\cite{murrellFactinBucklingCoordinates2012}] {F-actin buckling coordinates contractility and severing in a biomimetic actomyosin cortex}
+            \item[\cite{murrellActomyosinSlidingAttenuated2014a}] {Actomyosin sliding is attenuated in contractile biomimetic cortices}
+            \item[\cite{jungFActinFragmentationInduces2016}] {F-actin fragmentation induces distinct mechanisms of stress relaxation in the actin cytoskeleton}
+            \item[\cite{yuBalanceForceGeneration2018}] {Balance between Force Generation and Relaxation Leads to Pulsed Contraction of Actomyosin Networks}
+            \item[\cite{sunCofilinMediatedFilamentSoftening2024}] {Cofilin-mediated filament softening and crosslinking counterbalance to enhance actin network flexibility}
+        \end{description}
     \end{frame}
 
+    \begin{frame}{Previous work - SOC in Literature}
+        \begin{description}
+            \item[\cite{anderson1958}] Absence of diffusion in certain random lattices. 
+            \item[\cite{bakSelforganizedCriticalityExplanation1987}] Self-organized criticality: an explanation of the 1/f noise.
+            \item[\cite{bakEarthquakesSelforganizedCritical1989}] Earthquakes as a self-organized critical  phenomenon. 
+            \item[\cite{bakSelforganizedCriticality1988}] Self-organized criticality. 
+            \item[\cite{sneppenEvolutionSelforganizedCritical1995}] Evolution as a self-organized critical phenomenon. 
+            \item[\cite{kobayashi1FluctuationHeartbeat1982}] 1/f fluctuation of heartbeat period. 
+            \item[\cite{beggsNeuronalAvalanchesNeocortical2003}] Neuronal avalanches in neocortical circuits.
+            \item[\cite{wijngaardenAvalanchesSelfOrganizedCriticality2006}] Avalanches and self-organized criticality in superconductors.
+        \end{description}
+    \end{frame}
+
+    \begin{frame}{Previous work - Identification of SOC in Actomyosin}
+        \begin{description}
+            \item[\cite{alencarNonequilibriumCytoquakeDynamics2016}] {Non-equilibrium cytoquake dynamics in cytoskeletal remodeling and stabilization} 
+            \item[\cite{shiDissectingFattailedFluctuations2019}] {Dissecting fat-tailed fluctuations in the cytoskeleton with active micropost arrays }
+            \item[\cite{yuBalanceForceGeneration2018}] {Pervasive cytoquakes in the actomyosin cortex across cell types and substrate stiffness }
+            \item[\cite{sivarajanLevydistributedFluctuationsLiving2024}] {L\'{e}vy-distributed fluctuations in the living cell cortex.}
+        \end{description}
+    \end{frame}
+  
     \section{Method}
     \begin{frame}{Method}
         More Physics

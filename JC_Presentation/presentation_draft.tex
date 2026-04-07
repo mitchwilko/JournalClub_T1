@@ -1,6 +1,9 @@
 \documentclass[aspectratio=169]{beamer}
 \usepackage[authoryear,round]{natbib}
 \usepackage{graphicx}
+\usepackage{braket}
+\usepackage{subfig}
+\captionsetup[subfloat]{labelfont={color=black}}
 
 \usetheme[
 	logo=images/unsw-portrait.png,
@@ -33,15 +36,124 @@
     \end{frame}
 
     \begin{frame}{Phase transitions}
-        Physics (include ising model), introduce terms for phase transitions, competing interactions, generally whats happening (not near the critical point)
+        Recap on phase transitions:
+        \begin{itemize}
+            \item Characterised by changes in state, often between competing ordered and disordered states
+            \begin{itemize}
+                \item (Thermodynamic) variable that catalysts this change is called an \textbf{order parameter}
+            \end{itemize}
+            \item The point at which the transition occurs is called the \textbf{critical point}
+            \item Critical phenomena can be studied only in second order, continuous phase transitions
+        \end{itemize}
     \end{frame}
 
-    \begin{frame}{Non-linear dynamics}
-        Physics talk about what characterises a chaotic system, how can you tell, what is fractal behaviour, what is attractors
+    \begin{frame}{Correlation functions}
+        In general, correlation functions contain a lot of useful information about a phase transition. Fourier transforms of the correlation functions are proportional to the power spectral density, i.e. $\tilde{\Gamma}(\mathbf{k}) \propto \Braket{|\tilde{m}(\mathbf{k})^2|}$.
+        Correlation function can be written in the form of "Ornstein-Zernike",
+        \begin{equation}
+            \Gamma(\mathbf{r}) \propto \frac{e^{-\frac{\mathbf{r}}{\xi}}}{\mathbf{r}}
+        \end{equation}
+        where $\xi$ is the correlation length, physically representing the distance at which the correlations decay. Experimentally, $\xi$ diverges at the critical point.
     \end{frame}
 
-    \begin{frame}{Self organised criticality}
-        Physics (will figure out what is 1/f noise)
+    \begin{frame}{Critical Exponents}
+        Lastly, to observe the other thermodynamic quantities' behaviour near the critical point, we need to introduce a term,
+        \begin{equation}
+            t = \frac{T - T_C}{T_C}.
+        \end{equation}
+        In the limit that $t\rightarrow 0$, any thermodynamic quantity can be decomposed into a "regular" and "singular" part. The correlation function takes on a power-law index, 
+        \begin{equation}
+            \Gamma(\mathbf{r}) \propto \mathbf{r}^{-p}e^{-\frac{\mathbf{r}}{\xi}}
+        \end{equation}
+        where $p = d - 2 + \eta$, $d$ is the dimensionality and $\eta$ is a critical exponent.
+    \end{frame}
+
+    \begin{frame}{The scaling hypothesis}
+        Correlation length, $\xi$, is the only characteristic length of the system in the neighbourhood of $t=0$. When $\xi$ diverges at $t=0$, the system has no characteristic length and is therefore invariant under scale transformations, giving rise to \textbf{self-similarity}. The correlation function then becomes 
+        \begin{equation}
+            \Gamma(\mathbf{r}) \propto \mathbf{r}^{-p}.
+        \end{equation}
+    \end{frame}
+
+    \begin{frame}{Van Hove Correlation Function}
+        The function is derived from the Born approximation scattering formula is gives the average density distribution at a time $t^\prime + t$,
+        \begin{equation}
+            G(\mathbf{r},t)=\frac{1}{N} \Braket{\sum_{l,j=1}^{N}\int d\mathbf{r}^\prime \cdot \delta(\mathbf{r} + \mathbf{r}(0)-\mathbf{r}^\prime)\delta(\mathbf{r}^\prime-\mathbf{r}_j(t))}.
+        \end{equation}
+        Away from the critical point, $T > T_C$ and for large $\mathbf{r}$ compared to the molecular distance, 
+        \begin{equation}
+            G(r,0) = \rho + \frac{e^{-\kappa_0 r}}{4\pi r_0 r}.
+        \end{equation}
+        The $\kappa_0$ is the correlation length, $\kappa_0 = (r^2\rho k_B T \chi_T)^{-1/2}$. When at the critical point, $\chi_T$ goes to 0 and the correlation length goes to infinity,
+
+        \begin{equation}
+            G(r,0) = \rho + \frac{1}{4\pi r_0^2 r}.
+        \end{equation}
+    \end{frame}
+
+    \begin{frame}{Anderson Localisation}
+        
+    \end{frame}
+
+    \begin{frame}{Chaos 101}
+        The term fractal becomes from \textit{fractional dimension}, coined by Benoit Mandelbrot in 1975. The key feature of fractal geometry is the notion of \textbf{self-similarity}. This is the idea that systems appear, at any size, to have the same general configuration i.e. the structure of the system is scale-free, pictures from \cite{wolfgang}.
+        \begin{figure}
+            \subfloat[Start]{\includegraphics[width=0.35\textwidth]{images/mandelbrot.jpg}}
+            \hspace{0.5cm}
+            \subfloat[Step 8 of zoom in]{\includegraphics[width=0.35\textwidth]{images/mandelbrot_zoom_in.jpg}}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}{Self-similarity in chaotic circuits}
+        \begin{figure}
+            \subfloat[Theory]{\includegraphics[width=0.5\textwidth]{images/attractor_theory.png}}
+            \subfloat[Experiment]{\includegraphics[width=0.5\textwidth]{images/attractor_exp.png}}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}{Self-similarity in Ising Model}
+        \begin{figure}
+        \subfloat[N = 5]{\includegraphics[width=0.3\textwidth]{images/sweept2_5.png}} 
+        \subfloat[N = 50]{\includegraphics[width=0.3\textwidth]{images/sweept2_50.png}} 
+        \subfloat[N = 200]{\includegraphics[width=0.3\textwidth]{images/sweept2_200.png}}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}{Lévy Flights}
+        Lévy flights is another term coined by Mandelbrot. It is a random walk with step sizes following a heavy-tailed distribution, known as the Lévy distribution. The distribution is complicated but in simple terms takes the form of:
+
+        \begin{itemize}
+            \item PDF with $\alpha = 1/2$: $f(x;\mu,c) = \sqrt{\frac{c}{2\pi}}\frac{e^{-\frac{c}{2(x-\mu)}}}{(x-\mu)^{3/2}}$
+            \item Generally, $\frac{\partial \phi(x,t)}{\partial t} = - \frac{\partial}{\partial x}f(x,t)\phi(x,t)+\gamma \frac{\partial^\alpha \phi(x,t)}{\partial |x|^\alpha}$
+        \end{itemize}
+        where $\phi(x,t)$ is the Fourier transform of the $f(x,\mu,c)$. The distribution is stable with $\alpha=1/2, 1 \text{ or } 2$.
+    \end{frame}
+
+    \begin{frame}{Comparison with Brownian motion}
+        Lévy flights are scale-invariant. Images credit to \cite{par}.
+        \begin{figure}
+        \subfloat[Brownian motion with 1000 steps]{\includegraphics[width=0.45\textwidth]{images/brownian.png}} 
+        \subfloat[Lévy flights with 1000 steps]{\includegraphics[width=0.4\textwidth]{images/levy.png}} 
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}{Problem of Flicker Noise}
+        \begin{figure}
+            \includegraphics[width=\textwidth]{images/soc.png}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}{Self Organised Criticality}
+        The idea is that systems inherently organise themselves in critical states. The optimal state is defined as:
+        \begin{itemize}
+            \item Maximally sensitive / minimally stable state
+            \item Configuration where noise is localised (clusters)
+            \item Scale-invariant
+        \end{itemize}
+        The local perturbations propagate at all length and thus leads to fluctuations at all time scales, resulting in a frequency spectrum 
+        \begin{equation}
+            S(\omega) = \int dt \frac{tD(t)}{1+(\omega t)^2} \approx \omega^{-2+\alpha}.
+        \end{equation}
     \end{frame}
 
     \begin{frame}{This biological system}

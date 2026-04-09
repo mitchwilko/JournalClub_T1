@@ -24,15 +24,11 @@
 		\titlepage
 	\end{frame}
 
-    \begin{frame}{Outline}
-        \tableofcontents 
-    \end{frame}
+    % \begin{frame}{Outline}
+    %     \tableofcontents 
+    % \end{frame}
 
     \section{Background}
-
-    \begin{frame}{Problem}
-        Physics\cite{anderson1958}
-    \end{frame}
 
     \begin{frame}[allowframebreaks]{Key Terms}
         \begin{longtable}{m{4cm}|m{9cm}}
@@ -51,10 +47,7 @@
             \hline
             \textbf{Scale-free energy dissaption} & A description of a system where the energy dissapation events have no characteristic 'size'. \vspace{0.2cm}\\
             \hline
-            \textbf{Criticality} & A system which can exhibit a phase transition (ordered to disordered) through the tuning of a parameter. \vspace{0.2cm}\\
-            \hline
-            \textbf{Self Ordered Criticality} & A system which exhibits this critical point through no tuning. It will always exist at the edge of ordered and disordered \vspace{0.2cm}\\
-            \hline
+            \textbf{Criticality} & A system which can exhibit a phase transition (ordered to disordered) through the tuning of a parameter. \vspace{0.2cm}
             % \textbf{Stress localization} & \vspace{0.2cm}\\
             % \hline
         \end{longtable}
@@ -120,29 +113,29 @@
         
     \end{frame}
 
-    \begin{frame}{Chaos 101}
-        The term fractal becomes from \textit{fractional dimension}, coined by Benoit Mandelbrot in 1975. The key feature of fractal geometry is the notion of \textbf{self-similarity}. This is the idea that systems appear, at any size, to have the same general configuration i.e. the structure of the system is scale-free, pictures from \cite{wolfgang}.
-        \begin{figure}
-            \subfloat[Start]{\includegraphics[width=0.35\textwidth]{images/mandelbrot.jpg}}
-            \hspace{0.5cm}
-            \subfloat[Step 8 of zoom in]{\includegraphics[width=0.35\textwidth]{images/mandelbrot_zoom_in.jpg}}
-        \end{figure}
-    \end{frame}
+    % \begin{frame}{Chaos 101}
+    %     The term fractal becomes from \textit{fractional dimension}, coined by Benoit Mandelbrot in 1975. The key feature of fractal geometry is the notion of \textbf{self-similarity}. This is the idea that systems appear, at any size, to have the same general configuration i.e. the structure of the system is scale-free, pictures from \cite{wolfgang}.
+    %     \begin{figure}
+    %         \subfloat[Start]{\includegraphics[width=0.35\textwidth]{images/mandelbrot.jpg}}
+    %         \hspace{0.5cm}
+    %         \subfloat[Step 8 of zoom in]{\includegraphics[width=0.35\textwidth]{images/mandelbrot_zoom_in.jpg}}
+    %     \end{figure}
+    % \end{frame}
 
-    \begin{frame}{Self-similarity in chaotic circuits}
-        \begin{figure}
-            \subfloat[Theory]{\includegraphics[width=0.5\textwidth]{images/attractor_theory.png}}
-            \subfloat[Experiment]{\includegraphics[width=0.5\textwidth]{images/attractor_exp.png}}
-        \end{figure}
-    \end{frame}
+    % \begin{frame}{Self-similarity in chaotic circuits}
+    %     \begin{figure}
+    %         \subfloat[Theory]{\includegraphics[width=0.5\textwidth]{images/attractor_theory.png}}
+    %         \subfloat[Experiment]{\includegraphics[width=0.5\textwidth]{images/attractor_exp.png}}
+    %     \end{figure}
+    % \end{frame}
 
-    \begin{frame}{Self-similarity in Ising Model}
-        \begin{figure}
-        \subfloat[N = 5]{\includegraphics[width=0.3\textwidth]{images/sweept2_5.png}} 
-        \subfloat[N = 50]{\includegraphics[width=0.3\textwidth]{images/sweept2_50.png}} 
-        \subfloat[N = 200]{\includegraphics[width=0.3\textwidth]{images/sweept2_200.png}}
-        \end{figure}
-    \end{frame}
+    % \begin{frame}{Self-similarity in Ising Model}
+    %     \begin{figure}
+    %     \subfloat[N = 5]{\includegraphics[width=0.3\textwidth]{images/sweept2_5.png}} 
+    %     \subfloat[N = 50]{\includegraphics[width=0.3\textwidth]{images/sweept2_50.png}} 
+    %     \subfloat[N = 200]{\includegraphics[width=0.3\textwidth]{images/sweept2_200.png}}
+    %     \end{figure}
+    % \end{frame}
 
     \begin{frame}{Lévy Flights}
         Lévy flights is another term coined by Mandelbrot. It is a random walk with step sizes following a heavy-tailed distribution, known as the Lévy distribution. The distribution is complicated but in simple terms takes the form of:
@@ -181,8 +174,39 @@
         \end{equation}
     \end{frame}
 
+    \begin{frame}{Previous work - SOC in Literature}
+        \textbf{Original Description of SOC:}
+        \begin{description}
+            \item[\cite{bakSelforganizedCriticalityExplanation1987}] Self-organized criticality: an explanation of the 1/f noise.
+            \item[\cite{bakEarthquakesSelforganizedCritical1989}] Earthquakes as a self-organized critical  phenomenon. 
+            \item[\cite{bakSelforganizedCriticality1988}] Self-organized criticality. 
+        \end{description}
+        \textbf{Example Applications of SOC:}
+        \begin{description}
+            \item[\cite{sneppenEvolutionSelforganizedCritical1995}] Evolution as a self-organized critical phenomenon. 
+            \item[\cite{kobayashi1FluctuationHeartbeat1982}] 1/f fluctuation of heartbeat period. 
+            \item[\cite{beggsNeuronalAvalanchesNeocortical2003}] Neuronal avalanches in neocortical circuits.
+            \item[\cite{wijngaardenAvalanchesSelfOrganizedCriticality2006}] Avalanches and self-organized criticality in superconductors.
+        \end{description}
+    \end{frame}
+
+    \begin{frame}{Problem}
+        \textbf{Identify the mechanism that causes Self-Ordered cryticality in the cytoskeleton}
+        
+        Goals of this paper:
+        \begin{enumerate}
+            \item Prove that the presence of SOC is driven by the interplay between the geometry of the system and the generation of stress. 
+            \item Quantify this interaction in order to draw links to Anderson Localisation.
+        \end{enumerate}
+    \end{frame}
+
     \begin{frame}{This biological system}
-        introduce all the interacting things, e.g. F-actin architecture, geometry vs MTF (active stress)
+        % introduce all the interacting things, e.g. F-actin architecture, geometry vs MTF (active stress) ng
+        This paper examins an actomyosin system
+        \begin{figure}
+            \subfloat{\includegraphics[width=0.9\textwidth]{images/Fig1a.png}}
+            \caption{Actomyosin system }
+        \end{figure}
     \end{frame}
 
     \section{Context}
@@ -207,19 +231,6 @@
         \end{description}
     \end{frame}
 
-    \begin{frame}{Previous work - SOC in Literature}
-        \begin{description}
-            \item[\cite{anderson1958}] Absence of diffusion in certain random lattices. 
-            \item[\cite{bakSelforganizedCriticalityExplanation1987}] Self-organized criticality: an explanation of the 1/f noise.
-            \item[\cite{bakEarthquakesSelforganizedCritical1989}] Earthquakes as a self-organized critical  phenomenon. 
-            \item[\cite{bakSelforganizedCriticality1988}] Self-organized criticality. 
-            \item[\cite{sneppenEvolutionSelforganizedCritical1995}] Evolution as a self-organized critical phenomenon. 
-            \item[\cite{kobayashi1FluctuationHeartbeat1982}] 1/f fluctuation of heartbeat period. 
-            \item[\cite{beggsNeuronalAvalanchesNeocortical2003}] Neuronal avalanches in neocortical circuits.
-            \item[\cite{wijngaardenAvalanchesSelfOrganizedCriticality2006}] Avalanches and self-organized criticality in superconductors.
-        \end{description}
-    \end{frame}
-
     \begin{frame}{Previous work - Identification of SOC in Actomyosin}
         \begin{description}
             \item[\cite{alencarNonequilibriumCytoquakeDynamics2016}] {Non-equilibrium cytoquake dynamics in cytoskeletal remodeling and stabilization} 
@@ -232,17 +243,25 @@
     \section{Method}
     \begin{frame}{Method}
         In Vitro Experiments:
-
-        Simulated Experiments
+        \begin{itemize}
+            \item [-] They have grown 2D actomyosin systems on glass surface.
+            \item [-] They measured the displacements of the network of actin.
+            \item [-] Vary paramters of the system. (Actin geometry, MTF size)
+        \end{itemize}
+        Simulated Experiments:
+        \begin{itemize}
+            \item [-] They used Mechanochemical Dynamics of Active Networks (MEDYAN) program to model actomyosin system.
+            \item [-] They measure the access the mechanical energy of the system and the mechanical modes
+        \end{itemize}
     \end{frame}
 
     \section{Results}
     \begin{frame}{Results}
         Story of the paper:
         \begin{enumerate}
-            \item Use in vitro experiment to idenitfy SOC in actomyosin system.
-            \item Use in vitro experiment to explore the effects of F-actin architecture and active stress to the presence of SOC.
-            \item Use simulation to further investigate the localisation of the energy dissapation and accumlation events, as a function of the actomyosin parameters (stress and geometry).
+            \item Idenitfy SOC in actomyosin system.
+            \item Exploration the effects of F-actin architecture and active stress to the presence of SOC.
+            \item Investigate the localisation of the energy dissapation and accumlation events, as a function of the actomyosin parameters.
         \end{enumerate}
         Goals of this paper:
         \begin{enumerate}
@@ -255,8 +274,6 @@
         Actomyosin displacements display temporal criticality
         \begin{figure}
             \subfloat[]{\includegraphics[width=0.33\textwidth]{images/Fig1e.png}}
-            \hspace{0.01\linewidth}
-            \subfloat[]{\includegraphics[width=0.32\textwidth]{images/Fig1f.png}}
             \hspace{0.01\linewidth}
             \subfloat[]{\includegraphics[width=0.3\textwidth]{images/Fig1g.png}}
         \end{figure}
@@ -276,8 +293,6 @@
         \begin{figure}
             \subfloat[]{\includegraphics[width=0.31\textwidth]{images/Fig3a.png}}
             \hspace{0.01\linewidth}
-            \subfloat[]{\includegraphics[width=0.31\textwidth]{images/Fig3d.png}}
-            \hspace{0.01\linewidth}
             \subfloat[]{\includegraphics[width=0.3\textwidth]{images/Fig3e.png}}
         \end{figure}
     \end{frame}
@@ -296,40 +311,39 @@
         \begin{figure}
             \subfloat[]{\includegraphics[width=0.35\textwidth]{images/Fig5h.png}}
             \hspace{0.01\linewidth}
-            \subfloat[]{\includegraphics[width=0.35\textwidth]{images/Fig5j.png}}
-        \end{figure}
-    \end{frame}
-
-    \begin{frame}{Finding 5 Cont.}
-        \begin{figure}
             \subfloat[]{\includegraphics[width=0.37\textwidth]{images/SupFig14a.png}}
-            \hspace{0.01\linewidth}
-            \subfloat[]{\includegraphics[width=0.4\textwidth]{images/SupFig14b.png}}
         \end{figure}
     \end{frame}
 
     \section{Discussion}
     \begin{frame}{Novel Contribution}
-        There is an interplay between the generation of active stress within the network and the architecture of the system. This interaction is highly similar to that of Anderson's localisation paper. 
+        Key findings of this paper:
+        \begin{enumerate}
+            \item Shown the presence of a L\'{e}vy-$\alpha$ distribution in the fluctuations of the f-actin structure.
+            \item Linked this behaviour to chracteristics of both F-actin geometry and active stress induced by the myosin.
+            \item Experimental results confirming the interplay between F-actin architecture and Active stress.
+            \item Attempted to show links between this feedback and effects of the localisation of energy dissapative events.
+        \end{enumerate}
     \end{frame}  
 
     \begin{frame}{Doubts}
         \begin{enumerate}
-            \item Scale of this Model
-            \item Level of Proof
-            \item SOC and Anderson localisation requires a high level of proof which is not seen in this paper
-            \item Lack of systematic experimental results
-            \item Large claims made potentially driven to increase reach or impact
+            \item Does this paper provide sufficient evidence for its claims?
+            \item Have they conducted sufficient trials to identify trends?
+            \item Why is there a discrepency between simulation and experimentation in this paper?
+            \item Do these finding scale to a reasonable size?
+            \item Are large claims made to increase reach or impact?
         \end{enumerate}
     \end{frame}
 
     \section{Concluding remarks}
 
     \begin{frame}{Conclusion}
+        What are the impacts?
         \begin{enumerate}
-            \item how living systems have tried to optimise for adaptability
-            \item theoretical understandings of complex energy-transducing materials like actomyosin are currently poor
-            \item suggest ways in which we could 'plug' into major pieces that make up the edifice of our understanding of passive matter, and therefore lead to new avenues of hypotheses / testing
+            \item Improves the theoretical understandings of complex energy-transducing materials like actomyosin.
+            \item Suggests how living systems may have tried to optimise for adaptability.
+            \item Offers ways in which we could use fundamental physical principles to further study complex biological systems.
         \end{enumerate}
     \end{frame}
 
@@ -340,11 +354,7 @@
 
     \section{Appendix}
 
-
     \begin{frame}{What has been published since?}
         More Physics
     \end{frame}   
-
-    
-
 \end{document}

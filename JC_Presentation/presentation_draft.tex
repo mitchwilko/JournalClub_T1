@@ -47,7 +47,7 @@
             \hline
             \textbf{Scale-free energy dissaption} & A description of a system where the energy dissapation events have no characteristic 'size'. \vspace{0.2cm}\\
             \hline
-            \textbf{Criticality} & A system which can exhibit a phase transition (ordered to disordered) through the tuning of a parameter. \vspace{0.2cm}
+            \textbf{Criticality} & The state of the system at the critical point, typically driven there through paramter tuning. \vspace{0.2cm}
             % \textbf{Stress localization} & \vspace{0.2cm}\\
             % \hline
         \end{longtable}
@@ -202,10 +202,10 @@
 
     \begin{frame}{This biological system}
         % introduce all the interacting things, e.g. F-actin architecture, geometry vs MTF (active stress) ng
-        This paper examins an actomyosin system
+        This paper examins an actomyosin system. The system a network of filamentous actin proteins creating structure and myosin motors generating active stress within the network.
         \begin{figure}
             \subfloat{\includegraphics[width=0.9\textwidth]{images/Fig1a.png}}
-            \caption{Actomyosin system }
+            \caption{Actomyosin system. (left) 'Unbranched' system due to nucleation with mDia1 proteins. (right) 'branched' network nuleated with arp2/3 proteins.}
         \end{figure}
     \end{frame}
 
@@ -270,48 +270,43 @@
         \end{enumerate}
     \end{frame}
 
-    \begin{frame}{Finding 1}
-        Actomyosin displacements display temporal criticality
+    \begin{frame}{1) Actomyosin displacements display temporal criticality}
         \begin{figure}
-            \subfloat[]{\includegraphics[width=0.33\textwidth]{images/Fig1e.png}}
-            \hspace{0.01\linewidth}
-            \subfloat[]{\includegraphics[width=0.3\textwidth]{images/Fig1g.png}}
+            \subfloat[Flucuations of the network with (cyan) and without (grey) myosin.]{\includegraphics[width=0.33\textwidth]{images/Fig1e.png}}
+            \hspace{0.1\linewidth}
+            \subfloat[Plot of the exponent, $\beta$, for systems with low to high branching.]{\includegraphics[width=0.3\textwidth]{images/Fig1g.png}}
         \end{figure}
     \end{frame}
 
-    \begin{frame}{Finding 2}
-        Branched actin networks display heavy-tailed displacement distributions
+    \begin{frame}{2) Branched actin networks display heavy-tailed displacement distributions}
         \begin{figure}
-            \subfloat[]{\includegraphics[width=0.4\textwidth]{images/Fig2b.png}}
-            \hspace{0.01\linewidth}
-            \subfloat[]{\includegraphics[width=0.38\textwidth]{images/Fig2e.png}}
+            \subfloat[Rescaled Van Hove correlation function of F-actin network]{\includegraphics[width=0.4\textwidth]{images/Fig2b.png}}
+            \hspace{0.1\linewidth}
+            \subfloat[L\'{e}vy-$\alpha$ exponent as a function of Arp2/3 concentration]{\includegraphics[width=0.38\textwidth]{images/Fig2e.png}}
         \end{figure}
     \end{frame}
 
-    \begin{frame}{Finding 3}
-        Myosin exhibits Lévy flight displacements independent of the F-actin architecture
+    \begin{frame}{3) Myosin exhibits Lévy flight displacements independent of the F-actin architecture}
         \begin{figure}
-            \subfloat[]{\includegraphics[width=0.31\textwidth]{images/Fig3a.png}}
-            \hspace{0.01\linewidth}
-            \subfloat[]{\includegraphics[width=0.3\textwidth]{images/Fig3e.png}}
+            \subfloat[Tradjectory of MTF with low (yellow) and high (purple) branching.]{\includegraphics[width=0.4\textwidth]{images/Fig3a.png}}
+            \hspace{0.1\linewidth}
+            \subfloat[L\'{e}vy exponent, $\alpha$ as a function of lag time $\Delta t$ for all conditions.]{\includegraphics[width=0.385\textwidth]{images/Fig3e.png}}
         \end{figure}
     \end{frame}
 
-    \begin{frame}{Finding 4}
-        Feedback between F-actin architecture and active stress drives criticality
+    \begin{frame}{4) Feedback between F-actin architecture and active stress drives criticality}
         \begin{figure}
-            \subfloat[]{\includegraphics[width=0.405\textwidth]{images/Fig4g.png}}
+            \subfloat[L\'{e}vy exponent $\alpha$ as a function of lag time for myosin.]{\includegraphics[width=0.38\textwidth]{images/Fig4g.png}}
             \hspace{0.01\linewidth}
-            \subfloat[]{\includegraphics[width=0.4\textwidth]{images/Fig4h.png}}
+            \subfloat[L\'{e}vy exponent of fluctuations as a function of myosin size.]{\includegraphics[width=0.38\textwidth]{images/Fig4h.png}}
         \end{figure}
     \end{frame}
 
-    \begin{frame}{Finding 5}
-        Branched networks dissipate energy and exhibit criticality through stiff modes]
+    \begin{frame}{5) Branched networks dissipate energy and exhibit criticality through stiff modes}
         \begin{figure}
-            \subfloat[]{\includegraphics[width=0.35\textwidth]{images/Fig5h.png}}
-            \hspace{0.01\linewidth}
-            \subfloat[]{\includegraphics[width=0.37\textwidth]{images/SupFig14a.png}}
+            \subfloat[Ensemble-averaged $\langle r \rangle$ of the F-actin network at various $R_{\text{arp}}$ values.]{\includegraphics[width=0.34\textwidth]{images/Fig5h.png}}
+            \hspace{0.1\linewidth}
+            \subfloat[Phase diagram as a function of branching parameter and MTF length.]{\includegraphics[width=0.37\textwidth]{images/SupFig14a.png}}
         \end{figure}
     \end{frame}
 
@@ -355,6 +350,12 @@
     \section{Appendix}
 
     \begin{frame}{What has been published since?}
-        More Physics
+        \begin{enumerate}
+            \item Crosslinked F-actin networks regulate load-dependent energy conversion
+            \item The Electromechanical Connectome: Integrating Voltage, Mechanical Nano-Forces, and Subcellular Fluid Phase Dynamics in Human Neural Computation
+            \item Reprogramming the Tumor Mechanical Microenvironment with Lactate Inhibition and Stimulator of Interferon Genes Activation to Potentiate Systematic Radio-Immunotherapy
+            \item Poroelastic mechanical loading disrupts cytoskeletal symmetry in 3D architected scaffolds
+            \item From actin to action
+        \end{enumerate}
     \end{frame}   
 \end{document}
